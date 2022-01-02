@@ -5,6 +5,7 @@ import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Users from "./user/pages/Users";
 import Places from "./places/pages/Places";
+import NewPlace from "./places/pages/NewPlace";
 
 import { Outlet, Link } from "react-router-dom";
 
@@ -17,6 +18,7 @@ function App() {
           <Route path="users" element={<Users />} />
           <Route path="places" element={<Places />} />
         </Route>
+        <Route path="/places/new" element={<NewPlace />} />
       </Routes>
     </BrowserRouter>
   );
