@@ -6,7 +6,7 @@ function Users() {
     {
       id: "u1",
       name: "Max",
-      image: "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a",
+      image: "https://www.w3schools.com/w3css/img_forest.jpg",
       places: 3,
     },
   ];
