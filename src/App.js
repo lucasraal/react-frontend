@@ -16,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />}>
           <Route index element={<HomeElement />} />
           <Route path="users" element={<Users />} />
+          <Route path=":uid/places" element={<Users />} />
           <Route path="places" element={<Places />} />
         </Route>
         <Route path="/places/new" element={<NewPlace />} />
@@ -39,7 +40,12 @@ function Home() {
 }
 
 function HomeElement() {
-  return <h2>Home Element</h2>;
+  return (
+    <div>
+      <h2>Home Element</h2>
+      <Link to="/users">Users</Link> | <Link to="/places">Places</Link>
+    </div>
+  );
 }
 
 export default App;
