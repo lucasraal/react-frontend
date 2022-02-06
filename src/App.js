@@ -1,22 +1,24 @@
 import React from "react";
+import { Outlet, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./index.css";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Users from "./user/pages/Users";
 import Places from "./places/pages/Places";
 import NewPlace from "./places/pages/NewPlace";
 
-import { Outlet, Link } from "react-router-dom";
+import MainNavigation from "./shared/components/Navigation/MainNavigation";
 
 function App() {
   return (
     <BrowserRouter>
+      <MainNavigation />
       <Routes>
         <Route path="/" element={<Home />}>
           <Route index element={<HomeElement />} />
           <Route path="users" element={<Users />} />
-          <Route path=":uid/places" element={<Users />} />
+          <Route path=":uid/places" element={<Places />} />
           <Route path="places" element={<Places />} />
         </Route>
         <Route path="/places/new" element={<NewPlace />} />
