@@ -10,26 +10,30 @@ import NewPlace from "./places/pages/NewPlace";
 
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
 
+// <main> css is on </main>src/shared/components/Navigation/MainHeader.css
+
 function App() {
   return (
     <BrowserRouter>
       <MainNavigation />
-      <Routes>
-        <Route path="/" element={<Home />}>
-          <Route index element={<HomeElement />} />
-          <Route path="users" element={<Users />} />
-          <Route path=":uid/places" element={<Places />} />
-          <Route path="places" element={<Places />} />
-        </Route>
-        <Route path="/places/new" element={<NewPlace />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />}>
+            <Route index element={<HomeElement />} />
+            <Route path="users" element={<Users />} />
+            <Route path=":uid/places" element={<Places />} />
+            <Route path="places" element={<Places />} />
+          </Route>
+          <Route path="/places/new" element={<NewPlace />} />
+        </Routes>
+      </main>
     </BrowserRouter>
   );
 }
 
 function Home() {
   return (
-    <div>
+    <>
       <h1>APP JS</h1>
       <nav>
         <Link to="/">Home</Link> | <Link to="/users">Users</Link> |{" "}
@@ -37,7 +41,7 @@ function Home() {
       </nav>
       <Outlet />
       <h5>Add bottom component here</h5>
-    </div>
+    </>
   );
 }
 
